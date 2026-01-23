@@ -1,11 +1,9 @@
 ---
-layout: page
+layout: default
 title: Publications
 permalink: /publications/
 order: 2
 ---
-
-<!-- ## Journal Papers -->
 
 ## Conference Proceedings
 
