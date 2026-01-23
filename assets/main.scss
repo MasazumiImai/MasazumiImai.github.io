@@ -2,7 +2,17 @@
 ---
 
 $brand-color: #6a1b9a;
-
 $text-color: #333333;
 
 @import "minima";
+
+.site-header {
+  background-color: $brand-color;
+  border-top: none;
+}
+.site-title, .site-nav .page-link {
+  color: #ffffff !important;
+}
+.site-nav .menu-icon > svg path {
+  fill: #ffffff;
+}
