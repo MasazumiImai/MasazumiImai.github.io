@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Publications
+title: 業績
 permalink: /ja/publications/
 order: 2
 ---
 
-## Conference Proceedings
+## 国際学会発表論文
 
 ### 2024
