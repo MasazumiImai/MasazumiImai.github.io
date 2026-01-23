@@ -7,5 +7,3 @@ permalink: /
 # Welcome to My World!
 
 ## Projects
-
-[>> Japanese](/ja/)

@@ -16,7 +16,7 @@
       <div class="trigger">
         {%- for path in site.header_pages -%}
           {%- assign page_url = path -%}
-          {%- comment -%} 日本語ページはメニューから除外する処理 {%- endcomment -%}
+          {%- comment -%} Exclude Japanese pages from the menu {%- endcomment -%}
           {%- unless page_url contains '/ja/' -%}
             <a class="page-link" href="{{ page_url | relative_url }}">
               {%- assign p = site.pages | where: "path", path | first -%}

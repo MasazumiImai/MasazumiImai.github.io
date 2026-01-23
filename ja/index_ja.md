@@ -7,5 +7,3 @@ permalink: /ja/
 # ようこそ
 
 ## プロジェクト
-
-[>> English](/)
