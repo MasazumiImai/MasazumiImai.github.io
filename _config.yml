@@ -1,11 +1,5 @@
 title: Masazumi Imai
-
 theme: jekyll-theme-minimal
-
-email: imai.masazumi.p2@dc.tohoku.ac.jp
-
-url: "https://MasazumiImai.github.io"
-
 header_pages:
   - index.md
   - publications.md
