@@ -1,5 +1,4 @@
 title: Masazumi Imai
-theme: jekyll-theme-minimal
-header_pages:
-  - index.md
-  - publications.md
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
