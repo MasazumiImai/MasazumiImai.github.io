@@ -1,7 +1,8 @@
 ---
 ---
 
-$srl-color: #002060
+$tohoku-univ-color: #3E1485;  // (rgb) = (62, 21, 134)
+$srl-color: #002060;  // (rgb) = (0, 32, 96)
 $text-color: #333333;
 
 @import "minima";
@@ -9,9 +10,25 @@ $text-color: #333333;
 .site-header {
   background-color: $srl-color;
   border-top: none;
+  // box-shadow: 0px 4px 10px rgba(0, 32, 96, 0.2);
+
+  // position: sticky;
+  // top: 0;
+  // z-index: 1000;
+
 }
 .site-title, .site-nav .page-link {
   color: #ffffff !important;
+}
+.site-title {
+  font-weight: bold;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+.site-nav .page-link:hover {
+  // color: #ffcc00 !important;
+  font-weight: bold;
+  text-decoration: underline;
 }
 .site-nav .menu-icon > svg path {
   fill: #ffffff;
