@@ -10,7 +10,7 @@ permalink: /publications/
 
 1. Kentaro Uno, Kazuki Takada, **<u>Masazumi Imai</u>**, Teruhiro Kataonami, Yudai Matsuura, Antonin Ringeval-Meusnier, Mikio Eguchi, Ryo Nishibe, Kazuya Yoshida, "LIMBERO: A Limbed Climbing Exploration Robot Towards Traveling on Rocky Cliffs," *Proceedings of the IEEE International Conference on Robotics and Automation (ICRA 2026)*, 2026.
 
-1. Seiko Piotr Yamaguchi*, Kentaro Uno*, Yasumaru Fujii, **<u>Masazumi Imai</u>**, Kazuki Takada, Kazuya Yoshida, “Towards the Automation in the Space Station: Feasibility Study and Ground Tests of a Multi-Limbed Intra Vehicular Robot,” *Proceedings of the IEEE/SICE International Symposium on System Integration (SII)*, pp. 1095–1101, 2025. * These authors contributed equally.
+1. Seiko Piotr Yamaguchi\*, Kentaro Uno\*, Yasumaru Fujii, **<u>Masazumi Imai</u>**, Kazuki Takada, Kazuya Yoshida, “Towards the Automation in the Space Station: Feasibility Study and Ground Tests of a Multi-Limbed Intra Vehicular Robot,” *Proceedings of the IEEE/SICE International Symposium on System Integration (SII)*, pp. 1095–1101, 2025. \*These authors contributed equally.
 
 ### 2024
 

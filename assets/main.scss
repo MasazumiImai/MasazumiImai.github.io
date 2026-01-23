@@ -12,9 +12,9 @@ $text-color: #333333;
   border-top: none;
   // box-shadow: 0px 4px 10px rgba(0, 32, 96, 0.2);
 
-  // position: sticky;
-  // top: 0;
-  // z-index: 1000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
 }
 .site-title, .site-nav .page-link {
@@ -23,11 +23,11 @@ $text-color: #333333;
 .site-title {
   font-weight: bold;
   font-size: 28px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 .site-nav .page-link:hover {
-  // color: #ffcc00 !important;
-  font-weight: bold;
+  // color: #ffffff !important;
+  // font-weight: bold;
   text-decoration: underline;
 }
 .site-nav .menu-icon > svg path {
