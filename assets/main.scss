@@ -18,12 +18,16 @@ $text-color: #333333;
 }
 .site-title, .site-nav .page-link {
   color: #ffffff !important;
-  text-decoration: underline;
 }
-.site-title {
+// .site-title {
+//   font-weight: bold;
+//   font-size: 28px;
+//   letter-spacing: 2px;
+// }
+.site-nav .page-link:hover {
+  // color: #ffcc00 !important;
   font-weight: bold;
-  font-size: 28px;
-  letter-spacing: 2px;
+  text-decoration: underline;
 }
 .site-nav .menu-icon > svg path {
   fill: #ffffff;
