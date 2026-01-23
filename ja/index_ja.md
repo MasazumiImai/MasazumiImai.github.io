@@ -1,9 +1,8 @@
 ---
 layout: default
-title: Home
+title: ホーム
 permalink: /ja/
 ---
 
-# ようこそ
+## Welcome to My World!
 
-## プロジェクト
