@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: Home
 permalink: /
 ---
@@ -8,4 +8,4 @@ permalink: /
 
 ## Projects
 
-[>> Japanese Version](/ja/)
+[>> Japanese](/ja/)
