@@ -1,11 +1,7 @@
 title: Masazumi Imai
 
-theme: jekyll-theme-minimal
+theme: minima
 
-menu:
-  - title: Publications
-    url: /publications.html
-
-# header_pages:
-#   - index.md
-#   - publications.md
+header_pages:
+  - index.md
+  - publications.md
