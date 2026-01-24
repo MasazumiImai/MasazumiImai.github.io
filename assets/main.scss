@@ -84,7 +84,7 @@ $text-color: #333333;
   display: flex;  // Activate flexbox
   flex-direction: column; // vertical: column, horizontal: row
   gap: 2px;  // Gap between social links
-  align-items: flex-start;
+  align-items: center;
   // padding-left: 5px;
 }
 .social-btn {
