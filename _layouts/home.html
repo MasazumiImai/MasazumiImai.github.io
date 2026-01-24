@@ -5,8 +5,8 @@ layout: default
 <div class="profile-layout">
   <aside class="profile-sidebar">
     <img src="{{ site.profile.avatar | relative_url }}" alt="Profile Photo" class="profile-img">
-    <h2 class="profile-name">{{ site.author.name }}</h2>
-    <div class="profile-bio">{{ site.author.bio }}</div>
+    <h2 class="profile-name">{{ site.profile.name }}</h2>
+    <div class="profile-bio">{{ site.profile.bio }}</div>
 
     <div class="profile-social">
       {% include social.html %}
