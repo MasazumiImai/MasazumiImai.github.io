@@ -41,6 +41,9 @@ $text-color: #333333;
 }
 .page-link {
   color: $white-color !important;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 // Overall layout: Horizontal alignment on PC, Vertical alignment on mobile
