@@ -23,21 +23,24 @@ $text-color: #333333;
   top: 0;
   z-index: 1000;
 }
-.site-title, .site-nav .page-link {
-  color: $white-color !important;
-}
 .site-title {
+  color: $white-color !important;
   font-weight: bold;
   font-size: 28px;
   letter-spacing: 1px;
 }
-.site-nav .page-link:hover {
-  // color: #ffffff !important;
+.site-nav {
+  color: $white-color !important;
   // font-weight: bold;
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
+  .menu-icon > svg path {
+    fill: $white-color;
+  }
 }
-.site-nav .menu-icon > svg path {
-  fill: $white-color;
+.page-link {
+  color: $white-color !important;
 }
 
 // Overall layout: Horizontal alignment on PC, Vertical alignment on mobile
