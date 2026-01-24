@@ -101,9 +101,27 @@ $text-color: #333333;
     // text-decoration: underline;
   }
 
-  .icon svg path {
-    fill: #666;
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+
+    /* 枠の中にある画像(img)やベクター(svg)のサイズを強制的に固定 */
+    svg, img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain; // Maintain the aspect ratio
+    }
+
+    svg path {
+      fill: #666;
+    }
   }
+  // .icon svg path {
+  //   fill: #666;
+  // }
 }
 
 // Profile (right-content) layout
