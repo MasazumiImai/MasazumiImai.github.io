@@ -2,18 +2,18 @@
 ---
 
 // Brand color
-$tohoku-univ-color: #3E1485;  // (rgb) = (62, 21, 134)
+$tohoku_univ-color: #3E1485;  // (rgb) = (62, 21, 134)
 $srl-color: #002060;  // (rgb) = (0, 32, 96)
 
 // Personal color
-$dark-green-color: #004322;  // (rgb) = (0, 88, 45)
+$dark_green-color: #004322;  // (rgb) = (0, 88, 45)
 $white-color: #ffffff;  // (rgb) = (255, 255, 255)
 $text-color: #333333;
 
 @import "minima";
 
 .site-header {
-  background-color: $srl-color;
+  background-color: $dark_green-color;
   border-top: none;
   // box-shadow: 0px 4px 10px rgba(0, 32, 96, 0.2);
 
