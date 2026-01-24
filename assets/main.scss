@@ -81,17 +81,17 @@ $text-color: #333333;
 .profile-social-links {
   display: flex;  // Activate flexbox
   flex-direction: column; // vertical: column, horizontal: row
-  gap: 5px;  // Gap between social links
+  gap: 1px;  // Gap between social links
   align-items: center;
 }
 .social-btn {
   display: inline-flex;  // Align icons and text side by side
   align-items: center;  // Align icons and text vertically to the center
-  gap: 4px;  // Gap between icon and text
+  gap: 5px;  // Gap between icon and text
   text-decoration: none !important;
   color: #666 !important;
-  font-size: 0.95rem;
-  padding: 5px 10px;
+  font-size: 14px;
+  padding: 2px 5px;
   border-radius: 5px;
   transition: background-color 0.2s;  // Hover transition time
 
