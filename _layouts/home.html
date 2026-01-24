@@ -4,10 +4,7 @@ layout: default
 
 <div class="profile-layout">
   <aside class="profile-sidebar">
-    {% if site.author.avatar %}
-      <img src="{{ site.author.avatar | relative_url }}" alt="Profile Photo" class="profile-img">
-    {% endif %}
-
+    <img src="{{ site.profile.avatar | relative_url }}" alt="Profile Photo" class="profile-img">
     <h2 class="profile-name">{{ site.author.name }}</h2>
     <div class="profile-bio">{{ site.author.bio }}</div>
 
