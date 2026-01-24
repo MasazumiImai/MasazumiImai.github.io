@@ -131,6 +131,22 @@ $content-width: 1200px;
   min-width: 0;
 }
 
+// Footer
+.site-footer {
+  padding: 30px 0;  // Top and bottom margins
+  border-top: 1px solid #e8e8e8;
+}
+.footer-content p {
+  margin-bottom: 5px; /* 行間を少し詰める */
+}
+.footer-content a {
+  color: #828282 !important;
+  text-decoration: underline;
+}
+.footer-content a:hover {
+  color: #333 !important;
+}
+
 // For mobile
 @media (max-width: 800px) {
   .profile-layout {
