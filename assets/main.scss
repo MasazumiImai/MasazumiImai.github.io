@@ -7,10 +7,50 @@ $srl-color: #002060;  // (rgb) = (0, 32, 96)
 
 // Personal color
 $dark_green-color: #004322;  // (rgb) = (0, 88, 45)
+$black-color: #000000;  // (rgb) = (0, 0, 0)
 $white-color: #ffffff;  // (rgb) = (255, 255, 255)
 $text-color: #333333;
 
 @import "minima";
+
+.profile-layout {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.profile-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  // border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid $dark_green-color;
+}
+
+.profile-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-bio {
+  font-size: 0.9rem;
+  color: $black-color;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.profile-content {
+  flex-grow: 1;
+  min-width: 0;
+}
 
 .site-header {
   background-color: $dark_green-color;
@@ -37,4 +77,20 @@ $text-color: #333333;
 }
 .site-nav .menu-icon > svg path {
   fill: $white-color;
+}
+
+// For mobile
+@media (max-width: 800px) {
+  .profile-layout {
+    flex-direction: column;
+  }
+  .profile-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
 }

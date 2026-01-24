@@ -6,3 +6,8 @@ header_pages:
   - index.md
   - publications.md
   - cv.md
+
+author:
+  name: Masazumi Imai
+  avatar: assets/img/profile.png
+  bio: "Ph.D. student at Tohoku University. Interested in Multi-Limbed Articulated Robots."
