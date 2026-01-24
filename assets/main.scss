@@ -32,17 +32,17 @@ $text-color: #333333;
 .site-nav {
   color: $white-color !important;
   // font-weight: bold;
-  &:hover {
-    text-decoration: underline;
-  }
+
   .menu-icon > svg path {
     fill: $white-color;
   }
-}
-.page-link {
-  color: $white-color !important;
-  &:hover {
-    text-decoration: underline;
+
+  .page-link {
+    color: $white-color !important;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
