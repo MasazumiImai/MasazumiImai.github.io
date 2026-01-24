@@ -3,6 +3,7 @@ title: Masazumi Imai
 theme: minima  # v2.5
 
 header_pages:
+  # - index.md
   - index.md
   - publications.md
   - cv.md
