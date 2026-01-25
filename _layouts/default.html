@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+
+        <div class="profile-layout">
+
+          <aside class="profile-sidebar">
+            <img src="{{ site.profile.avatar | relative_url }}" alt="Profile Photo" class="profile-img">
+            <h2 class="profile-name">{{ site.profile.name }}</h2>
+            <div class="profile-bio">{{ site.profile.bio }}</div>
+
+            <div class="profile-social-links">
+              {% if site.profile.email %}
+                <a href="mailto:{{ site.profile.email }}" class="social-btn">
+                  <span class="icon">
+                    <svg viewBox="0 0 24 24" width="16px" height="16px"><path fill="#333333" d="M20,4H4C2.897,4,2,4.897,2,6v12c0,1.103,0.897,2,2,2h16c1.103,0,2-0.897,2-2V6C22,4.897,21.103,4,20,4z M20,6v0.511 l-8,6.223L4,6.512V6H20z M4,18V9.044l7.386,5.745C11.566,14.93,11.783,15,12,15s0.434-0.07,0.614-0.211L20,9.044L20.002,18H4z"/></svg>
+                  </span>
+                  <span class="username">Email</span>
+                </a>
+              {% endif %}
+
+              {% if site.profile.location %}
+                <div class="social-btn" style="cursor: default; background-color: transparent;">
+                  <span class="icon">
+                    <svg viewBox="0 0 24 24" width="16px" height="16px"><path fill="#333333" d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5 s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z"/></svg>
+                  </span>
+                  <span class="username">{{ site.profile.location }}</span>
+                </div>
+              {% endif %}
+
+              {% if site.profile.github %}
+                <a href="https://github.com/{{ site.profile.github }}" target="_blank" class="social-btn">
+                  <span class="icon">
+                    {% include icons/github_logo.svg %}
+                  </span>
+                  <span class="username">GitHub</span>
+                </a>
+              {% endif %}
+
+              {% if site.profile.linkedin %}
+                <a href="https://www.linkedin.com/in/{{ site.profile.linkedin }}" target="_blank" class="social-btn">
+                  <span class="icon">
+                    {% include icons/linkedin_logo.svg %}
+                  </span>
+                  <span class="username">LinkedIn</span>
+                </a>
+              {% endif %}
+
+              {% if site.profile.google_scholar %}
+                <a href="{{ site.profile.google_scholar }}" target="_blank" class="social-btn">
+                  <span class="icon">
+                    {% include icons/google_scholar_logo.svg %}
+                  </span>
+                  <span class="username">Google Scholar</span>
+                </a>
+              {% endif %}
+
+              {% if site.profile.researchgate %}
+                <a href="{{ site.profile.researchgate }}" target="_blank" class="social-btn">
+                  <span class="icon">
+                    {% include icons/researchgate_logo.svg %}
+                  </span>
+                  <span class="username">ResearchGate</span>
+                </a>
+              {% endif %}
+            </div>
+          </aside>
+
+          <div class="profile-content">
+            {{ content }}
+          </div>
+
+        </div>
+        </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
