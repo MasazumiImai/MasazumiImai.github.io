@@ -58,11 +58,14 @@ $content-width: 1300px;
   margin-top: 20px;
 }
 
-// Profile (left-sidebar) layout
+/* === Profile (left-sidebar) layout === */
 .profile-sidebar {
   width: 300px;
   flex-shrink: 0;
   text-align: center;
+  position: sticky;
+  top: 80px;        // Margin from top
+  height: fit-content;
 }
 .profile-img {
   width: 300px;
