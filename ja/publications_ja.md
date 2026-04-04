@@ -8,11 +8,11 @@ permalink: /ja/publications/
 
 ### 2026
 
-1. Kentaro Uno$^\dag$, **<u>Masazumi Imai</u>**$^\dag$, Kazuki Takada, Teruhiro Kataonami, Yudai Matsuura, Antonin Ringeval-Meusnier, Keita Nagaoka, Mikio Eguchi, Ryo Nishibe, Kazuya Yoshida, "LIMBERO: A Limbed Climbing Exploration Robot Towards Traveling on Rocky Cliffs," *Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)*, 2026. $^\dag$These authors contributed equally.
+1. Kentaro Uno\*, **<u>Masazumi Imai</u>**\*, Kazuki Takada, Teruhiro Kataonami, Yudai Matsuura, Antonin Ringeval-Meusnier, Keita Nagaoka, Mikio Eguchi, Ryo Nishibe, Kazuya Yoshida, "LIMBERO: A Limbed Climbing Exploration Robot Towards Traveling on Rocky Cliffs," *Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)*, 2026. \*These authors contributed equally.
 
 ### 2025
 
-1. Seiko Piotr Yamaguchi$^\dag$, Kentaro Uno$^\dag$, Yasumaru Fujii, **<u>Masazumi Imai</u>**, Kazuki Takada, Kazuya Yoshida, “Towards the Automation in the Space Station: Feasibility Study and Ground Tests of a Multi-Limbed Intra Vehicular Robot,” *Proceedings of the IEEE/SICE International Symposium on System Integration (SII)*, pp. 1095–1101, 2025. $^\dag$These authors contributed equally.
+1. Seiko Piotr Yamaguchi\*, Kentaro Uno\*, Yasumaru Fujii, **<u>Masazumi Imai</u>**, Kazuki Takada, Kazuya Yoshida, “Towards the Automation in the Space Station: Feasibility Study and Ground Tests of a Multi-Limbed Intra Vehicular Robot,” *Proceedings of the IEEE/SICE International Symposium on System Integration (SII)*, pp. 1095–1101, 2025. \*These authors contributed equally.
 
 ### 2024
 
