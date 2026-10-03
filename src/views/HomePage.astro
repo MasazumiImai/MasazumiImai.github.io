@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import NewsList from '../components/NewsList.astro';
+import PubItem from '../components/PubItem.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import { type Lang, localizePath, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const projects = (await getCollection('research', ({ id }) => id.startsWith(`${lang}/`))).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const selected = (
+  await getCollection('publications', ({ data }) => data.selected && (lang === 'ja' || data.type !== 'domestic'))
+).sort((a, b) => b.data.year - a.data.year);
+---
+
+<Base lang={lang}>
+  <Hero lang={lang} />
+
+  <section class="section">
+    <div class="section-head">
+      <h2 class="eyebrow">{t(lang, 'home.news')}</h2>
+    </div>
+    <NewsList lang={lang} limit={5} />
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2 class="eyebrow">{t(lang, 'home.research')}</h2>
+      <a class="more" href={localizePath('/research/', lang)}>{t(lang, 'home.more')} →</a>
+    </div>
+    <div class="cards">
+      {projects.map((entry) => <ResearchCard entry={entry} lang={lang} />)}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2 class="eyebrow">{t(lang, 'home.selected')}</h2>
+      <a class="more" href={localizePath('/publications/', lang)}>{t(lang, 'home.more')} →</a>
+    </div>
+    <ol class="pub-list">
+      {selected.map((pub) => <PubItem pub={pub} lang={lang} />)}
+    </ol>
+  </section>
+</Base>

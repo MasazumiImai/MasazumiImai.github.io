@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { t } from '../i18n';
+---
+
+<Base lang="en" title="404">
+  <section class="notfound">
+    <p class="eyebrow">404</p>
+    <h1 class="page-title">{t('en', 'notfound.title')}</h1>
+    <p lang="ja">{t('ja', 'notfound.title')}</p>
+    <p>
+      <a href="/">{t('en', 'notfound.back')}</a> / <a href="/ja/" lang="ja">{t('ja', 'notfound.back')}</a>
+    </p>
+  </section>
+</Base>

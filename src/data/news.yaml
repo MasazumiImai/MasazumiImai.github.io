@@ -1,0 +1,16 @@
+# date: YYYY-MM-DD
+# text: 文字列，or { en: ..., ja: ... }
+# link: 任意（URLまたはサイト内パス）
+
+- id: 2026-isparo
+  date: 2026-08-29
+  text:
+    en: Our paper was accepted at iSpaRo 2026.
+    ja: 筆頭著者の論文が iSpaRo 2026 に採択されました．
+
+- id: 2026-icra
+  date: 2026-02-01
+  text:
+    en: Our paper was accepted at ICRA 2026.
+    ja: 脚型クライミングロボット LIMBERO に関する論文が ICRA 2026 に採択されました．
+

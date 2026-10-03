@@ -1,0 +1,80 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { profile } from '../config';
+import { type Lang, formatYearMonth, localize, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const all = await getCollection('cv');
+
+const sectionKeys = {
+  experience: 'cv.experience',
+  education: 'cv.education',
+  awards: 'cv.awards',
+  scholarships: 'cv.scholarships',
+  skills: 'cv.skills',
+} as const;
+
+const sections = (Object.keys(sectionKeys) as (keyof typeof sectionKeys)[])
+  .map((key) => ({
+    key,
+    items: all
+      .filter((e) => e.data.section === key)
+      .sort((a, b) => (b.data.start ?? '').localeCompare(a.data.start ?? '')),
+  }))
+  .filter((section) => section.items.length > 0);
+
+function period({ start, end }: CollectionEntry<'cv'>['data']): string {
+  if (!start) return '';
+  const from = formatYearMonth(start, lang);
+  if (!end) return from;
+  const to = end === 'present' ? t(lang, 'cv.present') : formatYearMonth(end, lang);
+  return `${from} – ${to}`;
+}
+---
+
+<Base lang={lang} title={t(lang, 'nav.cv')}>
+  <h1 class="page-title">{t(lang, 'nav.cv')}</h1>
+  {
+    profile.cvPdf && (
+      <p>
+        <a class="button" href={profile.cvPdf}>
+          {t(lang, 'cv.download')}
+        </a>
+      </p>
+    )
+  }
+  {
+    sections.map((section) => (
+      <section class="section">
+        <h2>{t(lang, sectionKeys[section.key])}</h2>
+        <ul class="timeline">
+          {section.items.map(({ data }) => (
+            <li>
+              <span class="period">{period(data)}</span>
+              <div>
+                <p class="item-title">{localize(data.title, lang)}</p>
+                {data.researchProject && (
+                  <p class="item-title">
+                    <span class="project-label">{lang === 'ja' ? '研究課題名：' : 'Research Project: '}</span>
+                    <strong>
+                      <a href={data.researchProject.url} target="_blank" rel="noopener noreferrer">
+                        {localize(data.researchProject.title, lang)}
+                      </a>
+                    </strong>
+                  </p>
+                )}
+                {data.org && <p class="item-sub">{localize(data.org, lang)}</p>}
+                {data.note && <p class="item-sub">{localize(data.note, lang)}</p>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</Base>

@@ -1,0 +1,162 @@
+# section: education | experience | awards | scholarships | skills
+# start / end: "YYYY-MM" (or "present")
+# title / org / note: string, or { en: ..., ja: ... }
+
+# ========== Experience ==========
+
+- id: dlr-intern
+  section: experience
+  start: "2025-06"
+  end: "2025-10"
+  title:
+    en: Research Intern
+    ja: 研究インターン
+  org:
+    en: Institute of Robotics and Mechatronics (RMC), German Aerospace Center (DLR), Germany
+    ja: ドイツ航空宇宙センター（DLR） ロボティクス・メカトロニクス研究所（RMC）
+
+- id: dc2
+  section: experience
+  start: "2024-04"
+  end: present
+  title:
+    en: JSPS Research Fellow (DC2)
+    ja: 日本学術振興会 特別研究員（DC2）
+  org:
+    en: Department of Aerospace Engineering, Graduate School of Engineering, Tohoku University
+    ja: 東北大学大学院 工学研究科 航空宇宙工学専攻
+
+- id: research-assistant
+  section: experience
+  start: "2022-10"
+  end: "2023-03"
+  title:
+    en: Research Assistant (RA)
+    ja: リサーチ・アシスタント（RA）
+  org:
+    en: Graduate School of Engineering, Tohoku University
+    ja: 東北大学大学院 工学研究科
+
+- id: teaching-assistant
+  section: experience
+  start: "2022-04"
+  end: "2022-08"
+  title:
+    en: Teaching Assistant (TA)
+    ja: ティーチング・アシスタント（TA）
+  org:
+    en: Tohoku University
+    ja: 東北大学
+
+# ========== Education ==========
+
+- id: phd
+  section: education
+  start: "2023-04"
+  end: present
+  title:
+    en: Ph.D. Student in Aerospace Engineering
+    ja: 工学研究科 航空宇宙工学専攻 博士後期課程
+  org:
+    en: Graduate School of Engineering, Tohoku University
+    ja: 東北大学大学院
+
+- id: master
+  section: education
+  start: "2021-04"
+  end: "2023-03"
+  title:
+    en: Master's Program in Aerospace Engineering
+    ja: 工学研究科 航空宇宙工学専攻 修士課程
+  org:
+    en: Graduate School of Engineering, Tohoku University
+    ja: 東北大学大学院
+
+- id: bachelor
+  section: education
+  start: "2017-04"
+  end: "2021-03"
+  title:
+    en: Bachelor's Program in Aerospace Engineering
+    ja: 理工学部 航空宇宙工学科
+  org:
+    en: College of Science and Technology, Nihon University
+    ja: 日本大学
+
+- id: ssp23
+  section: education
+  start: "2023-06"
+  end: "2023-08"
+  title:
+    en: Space Studies Program 2023 (SSP23)
+    ja: Space Studies Program 2023 (SSP23)
+  org:
+    en: International Space University
+    ja: 国際宇宙大学
+
+# ========== Scholarships ==========
+
+- id: jsps-kakenhi-fellows
+  section: scholarships
+  start: "2024-04"
+  end: "2026-03"
+  title:
+    en: JSPS KAKENHI Grant-in-Aid for JSPS Fellows
+    ja: 科学研究費助成事業（科研費）特別研究員奨励費
+  researchProject:
+    title:
+      en: Dynamic Motion Control Utilizing Reaction to Achieve "Flexibility" of Limbed Climbing Robots
+      ja: 脚型クライミングロボットの「しなやかさ」を実現する反動を利用した動的運動制御
+    url: https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-25KJ0592/
+  org:
+    en: Japan Society for the Promotion of Science (JSPS)
+    ja: 日本学術振興会（JSPS）
+
+- id: spring
+  section: scholarships
+  start: "2023-04"
+  end: "2024-03"
+  title:
+    en: Support for Pioneering Research Initiated by the Next Generation (SPRING)
+    ja: 次世代研究者挑戦的研究（SPRING）
+  org:
+    en: Japan Science and Technology Agency (JST)
+    ja: 科学技術振興機構（JST）
+
+- id: gp-mech
+  section: scholarships
+  start: "2025-06"
+  end: "2025-10"
+  title:
+    en: Graduate Program for Integration of Mechanical Systems (GP-Mech), Overseas Research Support
+    ja: 機械科学技術国際共同大学院プログラム（GP-Mech）海外渡航支援
+  org:
+    en: Tohoku University
+    ja: 東北大学
+
+# ========== Awards ==========
+
+# - id: award-icra2023-finalist
+#   section: awards
+#   start: "2023-06"
+#   title: ICRA 2023 Outstanding Locomotion Paper Finalist
+#   org: IEEE International Conference on Robotics and Automation
+
+# - id: award-ras-japan-2023
+#   section: awards
+#   start: "2023-06"
+#   title: IEEE RAS Japan Joint Chapter Young Award (ICRA 2023)
+
+# - id: award-clawar2023
+#   section: awards
+#   start: "2023-10"
+#   title: CLAWAR 2023 Highly Commended Paper
+
+# ========== Skills ==========
+
+# - id: skill-programming
+#   section: skills
+#   title:
+#     en: Programming
+#     ja: プログラミング
+#   note: C++, Python, MATLAB

@@ -1,0 +1,101 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { profile } from '../config';
+import { type Lang, t } from '../i18n';
+
+interface Props {
+  pub: CollectionEntry<'publications'>;
+  lang: Lang;
+  embedVideo?: boolean;
+}
+
+const { pub, lang, embedVideo = false } = Astro.props;
+const { title, authors, venue, details, year, awards, links } = pub.data;
+const sep = pub.data.type === 'domestic' ? '，' : ', ';
+
+function highlight(author: string) {
+  for (const name of profile.selfNames) {
+    const i = author.indexOf(name);
+    if (i >= 0) return { before: author.slice(0, i), name, after: author.slice(i + name.length) };
+  }
+  return null;
+}
+
+const linkLabels = { video: 'Video', doi: 'DOI', arxiv: 'arXiv', pdf: 'PDF', code: 'Code', project: 'Project' };
+const linkEntries = (Object.keys(linkLabels) as (keyof typeof linkLabels)[])
+  .filter((key) => links[key])
+  .map((key) => ({ label: linkLabels[key], href: links[key]! }));
+const hasEqual = authors.some((a) => a.includes('*'));
+
+function youtubeId(videoUrl: string | undefined): string | undefined {
+  if (!videoUrl) return;
+  const url = new URL(videoUrl);
+  const host = url.hostname;
+  const id = host === 'youtu.be'
+    ? url.pathname.slice(1)
+    : ['youtube.com', 'www.youtube.com', 'm.youtube.com', 'www.youtube-nocookie.com'].includes(host)
+      ? url.searchParams.get('v') ?? url.pathname.match(/^\/(?:embed|shorts)\/([^/]+)\/?$/)?.[1]
+      : undefined;
+  return id && /^[A-Za-z0-9_-]{11}$/.test(id) ? id : undefined;
+}
+
+const videoId = embedVideo ? youtubeId(links.video) : undefined;
+---
+
+<li class="pub">
+  {videoId && (
+    <iframe
+      class="project-video"
+      src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+      title={`${title} — ${lang === 'ja' ? '論文紹介動画' : 'Publication video'}`}
+      width="560"
+      height="315"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    />
+  )}
+  <p class="pub-title">{title}</p>
+  <p class="pub-authors">
+    {
+      authors.map((author, i) => {
+        const h = highlight(author);
+        return (
+          <>
+            {i > 0 && sep}
+            {h ? (
+              <>
+                {h.before}
+                <strong class="me">{h.name}</strong>
+                {h.after}
+              </>
+            ) : (
+              author
+            )}
+          </>
+        );
+      })
+    }
+  </p>
+  <p class="pub-venue">
+    <em>{venue}</em>
+    {details && `${sep}${details}`}
+    {`${sep}${year}`}
+  </p>
+  {hasEqual && <p class="pub-note">{t(lang, 'pub.equal')}</p>}
+  {
+    (awards.length > 0 || linkEntries.length > 0) && (
+      <div class="pub-meta">
+        {awards.map((award) => (
+          <span class="badge award">{award}</span>
+        ))}
+        {linkEntries.map((link) => (
+          <a class="badge link" href={link.href} target="_blank" rel="noopener noreferrer">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    )
+  }
+</li>

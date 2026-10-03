@@ -1,0 +1,273 @@
+# type: journal | international | domestic | preprint
+# authors:
+#   Mark "*" at the end of an equal contributor's name.
+#   Mark "〇" at the beginning of a domestic presenter's name.
+# selected: show in the top page if true
+# links: pdf / doi / arxiv / video / code / project（任意）
+
+# ========== International ==========
+
+- id: graphbased-isparo2026
+  type: international
+  title: "Graph-Based Simultaneous Path and Foothold Planning for Multi-Limbed Intra-Vehicular Robots in Space Stations"
+  authors:
+    - Masazumi Imai
+    - Kentaro Uno
+    - Kazuya Yoshida
+  venue: Proceedings of the International Conference on Space Robotics (iSpaRo)
+  details: pp. TBD
+  year: 2026
+  links:
+    video: https://www.youtube.com/watch?v=69p-YU6ZlCY
+    arxiv: https://arxiv.org/abs/2609.35000
+  selected: true
+
+- id: limbero-icra2026
+  type: international
+  title: "LIMBERO: A Limbed Climbing Exploration Robot Towards Traveling on Rocky Cliffs"
+  authors:
+    - Kentaro Uno*
+    - Masazumi Imai*
+    - Kazuki Takada
+    - Teruhiro Kataonami
+    - Yudai Matsuura
+    - Antonin Ringeval-Meusnier
+    - Keita Nagaoka
+    - Mikio Eguchi
+    - Ryo Nishibe
+    - Kazuya Yoshida
+  venue: Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)
+  year: 2026
+  links:
+    video: https://www.youtube.com/watch?v=c3cIx2A6K-4
+    arxiv: https://arxiv.org/abs/2603.16531
+  selected: true
+
+- id: ivr-sii2025
+  type: international
+  title: "Towards the Automation in the Space Station: Feasibility Study and Ground Tests of a Multi-Limbed Intra Vehicular Robot"
+  authors:
+    - Seiko Piotr Yamaguchi*
+    - Kentaro Uno*
+    - Yasumaru Fujii
+    - Masazumi Imai
+    - Kazuki Takada
+    - Kazuya Yoshida
+  venue: Proceedings of the IEEE/SICE International Symposium on System Integration (SII)
+  details: pp. 1095-1101
+  year: 2025
+  links:
+    doi: https://ieeexplore.ieee.org/document/10870890
+    arxiv: https://arxiv.org/abs/2512.23153v1
+
+- id: reaction-clawar2024
+  type: international
+  title: "Admittance Control-based Floating Base Reaction Mitigation for Limbed Climbing Robots"
+  authors:
+    - Masazumi Imai
+    - Kentaro Uno
+    - Kazuya Yoshida
+  venue: Proceedings of the 27th International Conference Series on Climbing and Walking Robots and the Support Technologies for Mobile Machines (CLAWAR 2024)
+  details: vol. 1115, pp. 157-168
+  year: 2024
+  links:
+    doi: https://link.springer.com/chapter/10.1007/978-3-031-71301-9_15
+    arxiv: https://arxiv.org/abs/2409.13218
+  selected: true
+
+- id: asteroid-clawar2023
+  type: international
+  title: "Mobility Strategy of Multi-Limbed Climbing Robots for Asteroid Exploration"
+  authors:
+    - Warley F. R. Ribeiro
+    - Kentaro Uno
+    - Masazumi Imai
+    - Koki Murase
+    - Barış Can Yalçın
+    - Matteo El Hariry
+    - Miguel A. Olivares-Mendez
+    - Kazuya Yoshida
+  venue: Proceedings of the 24th International Conference Series on Climbing and Walking Robots and the Support Technologies for Mobile Machines (CLAWAR 2023)
+  details: pp. 33-45
+  year: 2023
+  links:
+    doi: https://link.springer.com/chapter/10.1007/978-3-031-47269-5_6
+    arxiv: https://arxiv.org/abs/2306.07688
+  awards:
+    - Highly Commended Paper
+
+- id: ramp-icra2023
+  type: international
+  title: "RAMP: Reaction-Aware Motion Planning of Multi-Legged Robots for Locomotion in Microgravity"
+  authors:
+    - Warley F. R. Ribeiro
+    - Kentaro Uno
+    - Masazumi Imai
+    - Koki Murase
+    - Kazuya Yoshida
+  venue: Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)
+  details: pp. 11845-11851
+  year: 2023
+  links:
+    video: https://www.youtube.com/watch?v=M-kWp0qJOTI
+    doi: https://ieeexplore.ieee.org/abstract/document/10161185
+    arxiv: https://arxiv.org/abs/2301.07996
+  selected: true
+  awards:
+    - ICRA 2023 Outstanding Locomotion Paper Finalist
+    - IEEE RAS Japan Joint Chapter Young Award (ICRA 2023)
+
+- id: ssa-iac2023
+  type: international
+  title: "International Approach to Space Situational Awareness and Collision Avoidance"
+  authors:
+    - Diego Guerra
+    - Ayberk Dulgeroglu
+    - Yakov Bobrov
+    - Elena Ancona
+    - Adrian Fernandez Amil
+    - Aida Silva
+    - Anwar K Backer
+    - Arun Jose K A
+    - Claudia Medeiros
+    - Dorottya Milánkovich
+    - Jaime Silva
+    - Kim Regnerij
+    - Lauren Hanson
+    - Marco Pascale
+    - Masazumi Imai
+    - Rachita Puri
+    - Steven Armstrong
+    - Thomas Hale
+    - Tuğçağ Dumlupınar
+    - Kirils Bistrovs
+    - Carlos Eduardo de Sá Amaral Oliveira
+    - Eric Dahlstrom
+  venue: Proceedings of the 74th International Astronautical Congress (IAC)
+  details: IAC-23,A6,8-E9.1,x77985
+  year: 2023
+
+# ========== Domestic（Japanese page only） ==========
+# TODO: Add links (doi) for domestic publications if available
+
+- id: ivr-jsass2026
+  type: domestic
+  title: 宇宙ステーション船内伝い歩き作業ロボットの自律移動計画および制御手法のシミュレーション検討
+  authors:
+    - 〇宇野 健太朗
+    - 今井 正純
+    - 吉田 和哉
+  venue: 第70回 宇宙科学技術連合講演会
+  details: "#3C04"
+  year: 2026
+
+- id: ivr-jsass2025
+  type: domestic
+  title: ISS船内伝い歩きロボットの移動シミュレーション
+  authors:
+    - 〇今井 正純
+    - Tharit Sinsunthorn
+    - 宇野 健太朗
+    - 吉田 和哉
+  venue: 第69回 宇宙科学技術連合講演会
+  details: "#1I11"
+  year: 2025
+
+- id: spacedyn-rsj2024
+  type: domestic
+  title: "SpaceDyn Ver. 3.0: ROSとの連携による宇宙ロボットシミュレーション"
+  authors:
+    - 〇内田 亮慈
+    - 今井 正純
+    - 髙田 一輝
+    - 宇野 健太朗
+    - 吉田 和哉
+  venue: 第42回 日本ロボット学会学術講演会
+  details: "#2K2-05"
+  year: 2024
+
+- id: limbero-rsj2024
+  type: domestic
+  title: "多様な地形を歩行・登攀可能な4脚クライミングロボット: LIMBEROの研究開発"
+  authors:
+    - 〇髙田 一輝
+    - 宇野 健太朗
+    - 今井 正純
+    - 西部 諒
+    - 片男波 輝大
+    - 吉田 和哉
+  venue: 第42回 日本ロボット学会学術講演会
+  details: "#2K3-04"
+  year: 2024
+
+- id: ivr-jsass2023
+  type: domestic
+  title: ポストISS・探査に向けた自動化・自律化 ～船内伝い歩き移動ロボットのプロトタイプ開発と地上実証～
+  authors:
+    - 〇宇野 健太朗*（東北大）
+    - 藤井 康丸*（(株)浜野製作所）
+    - 髙田 一輝
+    - 江口 幹生
+    - 今井 正純
+    - 加藤 匠哉
+    - 村瀬 晃基
+    - 大河原 拓
+    - 吉田 和哉（東北大）
+    - 内田 博也
+    - 角田 旭
+    - 宮地 史也（(株)浜野製作所）
+    - 板倉 理一
+    - 山口 正光ピヨトル
+    - 稲垣 哲哉（JAXA）
+  venue: 第67回 宇宙科学技術連合講演会
+  details: "#2N09"
+  year: 2023
+
+- id: legged-rl-rsj2023
+  type: domestic
+  title: 脚型ロボットの障害物回避のための深層強化学習を用いた局所移動方向決定手法
+  authors:
+    - 〇山口 椋
+    - 宇野 健太朗
+    - 今井 正純
+    - Warley F. R. Ribeiro
+    - 栗原 洸樹
+    - 吉田 和哉
+  venue: 第41回 日本ロボット学会学術講演会
+  details: "#2D2-01"
+  year: 2023
+
+- id: ivr-robomech2023
+  type: domestic
+  title: ISS船内伝い歩き移動ロボットの微小重力模擬移動実験
+  authors:
+    - 〇髙田 一輝
+    - 宇野 健太朗
+    - 村瀬 晃基
+    - 大河原 拓
+    - 今井 正純
+    - Warley F. R. Ribeiro（東北大）
+    - 山口 正光ピヨトル
+    - 板倉 理一
+    - 大塚 聡子
+    - 稲垣 哲哉
+    - 和田 勝（JAXA）
+    - 吉田 和哉（東北大）
+  venue: ロボティクス・メカトロニクス講演会 2023
+  details: "#1A2-B27"
+  year: 2023
+
+- id: ivr-robomech2022
+  type: domestic
+  title: ISS船内移動ロボットのための脚構成検討と歩容計画
+  authors:
+    - 〇今井 正純
+    - 宇野 健太朗
+    - Warley F. R. Ribeiro（東北大）
+    - 山口 正光ピヨトル
+    - 板倉 理一
+    - 和田 勝（JAXA）
+    - 吉田 和哉（東北大）
+  venue: ロボティクス・メカトロニクス講演会 2022
+  details: "#1P1-H06"
+  year: 2022

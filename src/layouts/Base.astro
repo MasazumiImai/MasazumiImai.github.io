@@ -1,0 +1,50 @@
+---
+import { Font } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { profile } from '../config';
+import { type Lang, languages, localize, switchLangPath } from '../i18n';
+import '../styles/global.css';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  description?: string;
+}
+
+const { lang, title, description } = Astro.props;
+const siteName = localize(profile.name, lang);
+const pageTitle = title ? `${title} | ${siteName}` : siteName;
+const desc = description ?? localize(profile.bio, lang);
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    {
+      languages.map((l) => (
+        <link rel="alternate" hreflang={l} href={new URL(switchLangPath(Astro.url.pathname, l), Astro.site).href} />
+      ))
+    }
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    {/*<link rel="icon" href="/favicon.svg" type="image/svg+xml" />*/}
+    <Font cssVariable="--font-inter" preload />
+  </head>
+  <body>
+    <Header lang={lang} />
+    <main class="container">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

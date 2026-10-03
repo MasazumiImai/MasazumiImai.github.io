@@ -1,0 +1,44 @@
+---
+import { profile } from '../config';
+import { type Lang, type UIKey, localizePath, switchLangPath, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const nav: { key: UIKey; path: string }[] = [
+  { key: 'nav.home', path: '/' },
+  { key: 'nav.research', path: '/research/' },
+  { key: 'nav.publications', path: '/publications/' },
+  { key: 'nav.cv', path: '/cv/' },
+];
+const current = Astro.url.pathname.replace(/\/?$/, '/');
+const other: Lang = lang === 'en' ? 'ja' : 'en';
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={localizePath('/', lang)}>{profile.name.en}</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {
+          nav.map((item) => {
+            const href = localizePath(item.path, lang);
+            const isCurrent = item.path === '/' ? current === href : current.startsWith(href);
+            return (
+              <li>
+                <a href={href} aria-current={isCurrent ? 'page' : undefined}>
+                  {t(lang, item.key)}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+      <a class="lang-switch" href={switchLangPath(current, other)} hreflang={other} lang={other}>
+        {other === 'ja' ? 'JP' : 'EN'}
+      </a>
+    </nav>
+  </div>
+</header>

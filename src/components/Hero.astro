@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/profile.png';
+import { profile } from '../config';
+import { type Lang, localize, t } from '../i18n';
+import SocialLinks from './SocialLinks.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const name = localize(profile.name, lang);
+---
+
+<section class="hero">
+  <Image src={portrait} alt={name} width={360} height={360} class="portrait" loading="eager" />
+  <div>
+    <h1>{name}</h1>
+    <p class="position">
+      {localize(profile.position, lang)} ·{' '}
+      {lang === 'ja' && <>{localize(profile.affiliation.university, lang)}{' '}</>}
+      <a href={profile.labUrl} target="_blank" rel="noopener noreferrer">{localize(profile.affiliation.lab, lang)}</a>
+      {lang === 'en' && <>, {localize(profile.affiliation.university, lang)}</>}
+    </p>
+    <p class="welcome">{t(lang, 'home.welcome')}</p>
+    <p class="bio">{localize(profile.bio, lang)}</p>
+    <SocialLinks />
+  </div>
+</section>

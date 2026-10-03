@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import { type Lang, formatDate, localize } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  limit?: number;
+}
+
+const { lang, limit } = Astro.props;
+const items = (await getCollection('news'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, limit);
+---
+
+<ul class="news">
+  {
+    items.map((item) => {
+      const text = localize(item.data.text, lang);
+      return (
+        <li>
+          <time datetime={item.data.date.toISOString().slice(0, 10)}>{formatDate(item.data.date)}</time>
+          <span>{item.data.link ? <a href={item.data.link}>{text}</a> : text}</span>
+        </li>
+      );
+    })
+  }
+</ul>

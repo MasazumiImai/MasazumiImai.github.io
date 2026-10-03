@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PubItem from '../components/PubItem.astro';
+import { type Lang, t } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const all = await getCollection('publications');
+
+const sectionKeys = {
+  journal: 'pub.journal',
+  international: 'pub.international',
+  domestic: 'pub.domestic',
+  preprint: 'pub.preprint',
+} as const;
+const types =
+  lang === 'ja'
+    ? (['journal', 'international', 'domestic', 'preprint'] as const)
+    : (['journal', 'international', 'preprint'] as const);
+
+const sections = types
+  .map((type) => {
+    const pubs = all.filter((p) => p.data.type === type);
+    const years = [...new Set(pubs.map((p) => p.data.year))].sort((a, b) => b - a);
+    return {
+      type,
+      groups: years.map((year) => ({ year, pubs: pubs.filter((p) => p.data.year === year) })),
+    };
+  })
+  .filter((section) => section.groups.length > 0);
+---
+
+<Base lang={lang} title={t(lang, 'nav.publications')}>
+  <h1 class="page-title">{t(lang, 'nav.publications')}</h1>
+  {
+    sections.map((section) => (
+      <section class="section">
+        <h2>{t(lang, sectionKeys[section.type])}</h2>
+        {section.type === 'domestic' && <p class="section-note">{t(lang, 'pub.presenter')}</p>}
+        {section.groups.map((group) => (
+          <div class="year-group">
+            <span class="year">{group.year}</span>
+            <ol class="pub-list">
+              {group.pubs.map((pub) => (
+                <PubItem pub={pub} lang={lang} />
+              ))}
+            </ol>
+          </div>
+        ))}
+      </section>
+    ))
+  }
+</Base>
