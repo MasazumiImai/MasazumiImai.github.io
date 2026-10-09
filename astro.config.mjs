@@ -1,7 +1,17 @@
 import { defineConfig, fontProviders } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://masazumiimai.github.io',
+  integrations: [
+    sitemap({
+      filter: (page) => !['/404', '/404/', '/404.html', '/robots.txt'].includes(new URL(page).pathname),
+      i18n: {
+        defaultLocale: 'en',
+        locales: { en: 'en', ja: 'ja' },
+      },
+    }),
+  ],
   fonts: [
     {
       provider: fontProviders.google(),
