@@ -50,7 +50,11 @@ const cv = defineCollection({
     title: localized,
     org: localized.optional(),
     note: localized.optional(),
-    researchProject: z.object({ title: localized, url: z.url() }).optional(),
+    details: z.array(z.object({
+      label: localized.optional(),
+      title: localized,
+      url: z.url().optional(),
+    })).default([]),
   }),
 });
 

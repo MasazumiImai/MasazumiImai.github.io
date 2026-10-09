@@ -1,6 +1,7 @@
 # section: education | experience | awards | grants | skills
 # start / end: "YYYY-MM" (or "present")
 # title / org / note: string, or { en: ..., ja: ... }
+# details: additional information (title required, label and url optional)
 
 # ========== Experience ==========
 
@@ -90,8 +91,13 @@
   title:
     en: Space Studies Program 2023 (SSP23)
     ja: Space Studies Program 2023 (SSP23)
+  details:
+    - title:
+        en: Participation Report (in Japanese)
+        ja: 参加報告書
+      url: https://www.ifs.tohoku.ac.jp/spaceprog/SSP23.pdf
   org:
-    en: International Space University
+    en: International Space University (ISU)
     ja: 国際宇宙大学
 
 # ========== Grants ==========
@@ -103,11 +109,14 @@
   title:
     en: JSPS KAKENHI Grant-in-Aid for JSPS Fellows
     ja: 科学研究費助成事業（科研費）特別研究員奨励費
-  researchProject:
-    title:
-      en: Dynamic Motion Control Utilizing Reaction to Achieve "Flexibility" of Limbed Climbing Robots
-      ja: 脚型クライミングロボットの「しなやかさ」を実現する反動を利用した動的運動制御
-    url: https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-25KJ0592/
+  details:
+    - label:
+        en: "Research Project: "
+        ja: "研究課題名："
+      title:
+        en: Dynamic Motion Control Utilizing Reaction to Achieve "Flexibility" of Limbed Climbing Robots
+        ja: 脚型クライミングロボットの「しなやかさ」を実現する反動を利用した動的運動制御
+      url: https://kaken.nii.ac.jp/ja/grant/KAKENHI-PROJECT-25KJ0592/
   org:
     en: Japan Society for the Promotion of Science (JSPS)
     ja: 日本学術振興会（JSPS）
@@ -122,6 +131,17 @@
   org:
     en: Japan Science and Technology Agency (JST)
     ja: 科学技術振興機構（JST）
+
+- id: ssp23-dispatch
+  section: grants
+  start: "2023-06"
+  end: "2023-08"
+  title:
+    en: International Space University Space Studies Program Dispatch Program
+    ja: 国際宇宙大学 Space Studies Program 派遣プログラム
+  org:
+    en: Institute of Fluid Science (IFS), Tohoku University
+    ja: 東北大学 流体科学研究所
 
 - id: gp-mech
   section: grants

@@ -66,15 +66,21 @@ function period({ start, end }: CollectionEntry<'cv'>['data']): string {
               <span class="period">{period(data)}</span>
               <div>
                 <p class="item-title">{localize(data.title, lang)}</p>
-                {data.researchProject && (
-                  <p class="item-title">
-                    <span class="project-label">{lang === 'ja' ? '研究課題名：' : 'Research Project: '}</span>
-                    <strong>
-                      <a href={data.researchProject.url} target="_blank" rel="noopener noreferrer">
-                        {localize(data.researchProject.title, lang)}
-                      </a>
-                    </strong>
-                  </p>
+                {data.details.length > 0 && (
+                  <div class="cv-details">
+                    {data.details.map((detail) => (
+                      <p class="cv-detail">
+                        {detail.label !== undefined && <span>{localize(detail.label, lang)}</span>}
+                        <strong>
+                          {detail.url ? (
+                            <a href={detail.url} target="_blank" rel="noopener noreferrer">
+                              {localize(detail.title, lang)}
+                            </a>
+                          ) : localize(detail.title, lang)}
+                        </strong>
+                      </p>
+                    ))}
+                  </div>
                 )}
                 {data.org && <p class="item-sub">{localize(data.org, lang)}</p>}
                 {data.note && <p class="item-sub">{localize(data.note, lang)}</p>}
