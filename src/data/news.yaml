@@ -1,16 +1,26 @@
 # date: YYYY-MM-DD
-# text: 文字列，or { en: ..., ja: ... }
-# link: 任意（URLまたはサイト内パス）
+# text: Strings, or { en: ..., ja: ... }
+# link: (URL or site-internal path)
+# linkText: (Text for the link, or { en: ..., ja: ... })
 
 - id: 2026-isparo
   date: 2026-08-29
   text:
     en: Our paper was accepted at iSpaRo 2026.
     ja: 筆頭著者の論文が iSpaRo 2026 に採択されました．
+  link: https://www.isairas-isparo.de/
+  linkText: iSpaRo 2026
 
 - id: 2026-icra
   date: 2026-02-01
   text:
-    en: Our paper was accepted at ICRA 2026.
-    ja: 脚型クライミングロボット LIMBERO に関する論文が ICRA 2026 に採択されました．
+    en: Our paper was accepted at IEEE ICRA 2026.
+    ja: 脚型クライミングロボット LIMBERO に関する論文が IEEE ICRA 2026 に採択されました．
+  link: https://2026.ieee-icra.org/
+  linkText: IEEE ICRA 2026
 
+- id: 2026-website
+  date: 2026-01-01
+  text:
+    en: This website was launched.
+    ja: 本ウェブサイトを開設しました．

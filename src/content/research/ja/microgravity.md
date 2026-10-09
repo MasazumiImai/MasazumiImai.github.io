@@ -2,6 +2,7 @@
 title: 微小重力環境での移動
 summary: 小惑星のような微小重力環境での脚型ロボットの移動に向けて，反動を考慮した動作計画と制御を研究しています．
 order: 3
+featuredPublication: ramp-icra2023
 publications:
   - ramp-icra2023
   - asteroid-clawar2023

@@ -4,6 +4,8 @@ export type Localized = string | { en: string; ja: string };
 
 const ui = {
   en: {
+    'theme.light': 'Light mode',
+    'theme.dark': 'Dark mode',
     'nav.home': 'Home',
     'nav.research': 'Research',
     'nav.publications': 'Publications',
@@ -24,7 +26,7 @@ const ui = {
     'cv.education': 'Education',
     'cv.experience': 'Work Experience',
     'cv.awards': 'Awards',
-    'cv.scholarships': 'Scholarships & Grants',
+    'cv.grants': 'Grants & Scholarships',
     'cv.skills': 'Skills',
     'cv.present': 'Present',
     'cv.download': 'Download CV (PDF)',
@@ -33,6 +35,8 @@ const ui = {
     'notfound.back': 'Back to home',
   },
   ja: {
+    'theme.light': 'ライトモード',
+    'theme.dark': 'ダークモード',
     'nav.home': 'ホーム',
     'nav.research': '研究',
     'nav.publications': '研究業績',
@@ -53,7 +57,7 @@ const ui = {
     'cv.education': '学歴',
     'cv.experience': '職歴',
     'cv.awards': '受賞',
-    'cv.scholarships': '奨学金・研究助成',
+    'cv.grants': '研究助成・奨学金',
     'cv.skills': 'スキル',
     'cv.present': '現在',
     'cv.download': '履歴書をダウンロード (PDF)',

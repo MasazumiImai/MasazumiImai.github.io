@@ -2,6 +2,7 @@
 title: Locomotion in Microgravity
 summary: Studying reaction-aware motion planning and control for limbed robots moving in microgravity environments, such as asteroids.
 order: 3
+featuredPublication: ramp-icra2023
 publications:
   - ramp-icra2023
   - asteroid-clawar2023

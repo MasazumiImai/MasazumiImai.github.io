@@ -17,10 +17,20 @@ const items = (await getCollection('news'))
   {
     items.map((item) => {
       const text = localize(item.data.text, lang);
+      const linkText = item.data.linkText ? localize(item.data.linkText, lang) : text;
+      const linkIndex = text.indexOf(linkText);
       return (
         <li>
           <time datetime={item.data.date.toISOString().slice(0, 10)}>{formatDate(item.data.date)}</time>
-          <span>{item.data.link ? <a href={item.data.link}>{text}</a> : text}</span>
+          <span>
+            {item.data.link && linkIndex >= 0 ? (
+              <>
+                {text.slice(0, linkIndex)}
+                <a href={item.data.link}>{linkText}</a>
+                {text.slice(linkIndex + linkText.length)}
+              </>
+            ) : text}
+          </span>
         </li>
       );
     })

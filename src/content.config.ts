@@ -37,13 +37,14 @@ const news = defineCollection({
     date: z.coerce.date(),
     text: localized,
     link: z.string().optional(),
+    linkText: localized.optional(),
   }),
 });
 
 const cv = defineCollection({
   loader: file('src/data/cv.yaml'),
   schema: z.object({
-    section: z.enum(['education', 'experience', 'awards', 'scholarships', 'skills']),
+    section: z.enum(['education', 'experience', 'awards', 'grants', 'skills']),
     start: yearMonth.optional(),
     end: z.union([z.literal('present'), yearMonth]).optional(),
     title: localized,
@@ -60,6 +61,7 @@ const research = defineCollection({
     summary: z.string(),
     order: z.number().default(0),
     image: z.string().optional(),
+    featuredPublication: reference('publications').optional(),
     publications: z.array(reference('publications')).default([]),
   }),
 });

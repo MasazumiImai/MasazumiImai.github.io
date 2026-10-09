@@ -93,6 +93,7 @@
   links:
     doi: https://link.springer.com/chapter/10.1007/978-3-031-47269-5_6
     arxiv: https://arxiv.org/abs/2306.07688
+    code: https://github.com/Space-Robotics-Laboratory/ClimbLab
   awards:
     - Highly Commended Paper
 
@@ -112,6 +113,7 @@
     video: https://www.youtube.com/watch?v=M-kWp0qJOTI
     doi: https://ieeexplore.ieee.org/abstract/document/10161185
     arxiv: https://arxiv.org/abs/2301.07996
+    code: https://github.com/Space-Robotics-Laboratory/RAMP
   selected: true
   awards:
     - ICRA 2023 Outstanding Locomotion Paper Finalist

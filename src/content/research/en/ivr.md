@@ -2,6 +2,7 @@
 title: Intra-Vehicular Mobility in Space Stations
 summary: Developing locomotion planning and control for multi-limbed robots, toward automating crew tasks inside space stations.
 order: 2
+featuredPublication: graphbased-isparo2026
 publications:
   - graphbased-isparo2026
   - ivr-sii2025

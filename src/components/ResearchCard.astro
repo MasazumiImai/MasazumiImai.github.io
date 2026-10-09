@@ -1,6 +1,7 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { type CollectionEntry, getEntry } from 'astro:content';
 import { type Lang, localizePath } from '../i18n';
+import { youtubeId } from '../utils/youtube';
 
 interface Props {
   entry: CollectionEntry<'research'>;
@@ -9,11 +10,14 @@ interface Props {
 
 const { entry, lang } = Astro.props;
 const slug = entry.id.split('/').pop();
+const featured = entry.data.featuredPublication ? await getEntry(entry.data.featuredPublication) : undefined;
+const videoId = youtubeId(featured?.data.links.video);
+const image = videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : entry.data.image;
 ---
 
 <a class="card" href={`${localizePath('/research/', lang)}#${slug}`}>
   <div class="card-media">
-    {entry.data.image && <img src={entry.data.image} alt="" loading="lazy" />}
+    {image && <img src={image} alt="" loading="lazy" decoding="async" />}
   </div>
   <div class="card-body">
     <h3>{entry.data.title}</h3>

@@ -14,7 +14,6 @@ const nav: { key: UIKey; path: string }[] = [
   { key: 'nav.cv', path: '/cv/' },
 ];
 const current = Astro.url.pathname.replace(/\/?$/, '/');
-const other: Lang = lang === 'en' ? 'ja' : 'en';
 ---
 
 <header class="site-header">
@@ -36,9 +35,23 @@ const other: Lang = lang === 'en' ? 'ja' : 'en';
           })
         }
       </ul>
-      <a class="lang-switch" href={switchLangPath(current, other)} hreflang={other} lang={other}>
-        {other === 'ja' ? 'JP' : 'EN'}
-      </a>
+      <div class="header-controls">
+        <div class="lang-switch" role="group" aria-label={lang === 'ja' ? '言語切り替え' : 'Language selection'}>
+          <a href={switchLangPath(current, 'ja')} hreflang="ja" lang="ja" aria-current={lang === 'ja' ? 'page' : undefined}>JP</a>
+          <span aria-hidden="true">|</span>
+          <a href={switchLangPath(current, 'en')} hreflang="en" lang="en" aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+        </div>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          data-light-label={t(lang, 'theme.light')}
+          data-dark-label={t(lang, 'theme.dark')}
+          hidden
+        >
+          <span aria-hidden="true">◑</span>
+        </button>
+      </div>
     </nav>
   </div>
 </header>

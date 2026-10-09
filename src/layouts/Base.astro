@@ -13,7 +13,7 @@ interface Props {
 }
 
 const { lang, title, description } = Astro.props;
-const siteName = localize(profile.name, lang);
+const siteName = profile.name.en;
 const pageTitle = title ? `${title} | ${siteName}` : siteName;
 const desc = description ?? localize(profile.bio, lang);
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -25,6 +25,46 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
+    <script is:inline>
+      (() => {
+        const storageKey = 'site-theme';
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+        let preference = null;
+        try {
+          const saved = localStorage.getItem(storageKey);
+          if (saved === 'light' || saved === 'dark') preference = saved;
+        } catch {}
+
+        function updateButton() {
+          const button = document.querySelector('[data-theme-toggle]');
+          if (!button) return;
+          const dark = document.documentElement.dataset.theme === 'dark';
+          const label = dark ? button.dataset.lightLabel : button.dataset.darkLabel;
+          button.setAttribute('aria-label', label);
+          button.setAttribute('title', label);
+          button.hidden = false;
+        }
+
+        function applyTheme(theme) {
+          document.documentElement.dataset.theme = theme;
+          updateButton();
+        }
+
+        applyTheme(preference ?? (systemTheme.matches ? 'dark' : 'light'));
+        document.addEventListener('DOMContentLoaded', updateButton, { once: true });
+        document.addEventListener('click', (event) => {
+          if (!(event.target instanceof Element) || !event.target.closest('[data-theme-toggle]')) return;
+          preference = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+          applyTheme(preference);
+          try {
+            localStorage.setItem(storageKey, preference);
+          } catch {}
+        });
+        systemTheme.addEventListener('change', (event) => {
+          if (!preference) applyTheme(event.matches ? 'dark' : 'light');
+        });
+      })();
+    </script>
     <title>{pageTitle}</title>
     <meta name="description" content={desc} />
     <link rel="canonical" href={canonical} />
@@ -37,8 +77,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical} />
-    {/*<link rel="icon" href="/favicon.svg" type="image/svg+xml" />*/}
+    <link rel="icon" href="/tonpei-kong.svg" type="image/svg+xml" />
     <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-ibm-plex-mono" />
   </head>
   <body>
     <Header lang={lang} />

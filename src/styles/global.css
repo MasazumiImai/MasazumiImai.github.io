@@ -13,14 +13,29 @@
   --award-bg: #fff7e0;
   --award-fg: #7a5300;
   --award-border: #f1d48a;
-  --radius: 12px;
+  --radius: 8px;
   --maxw: 880px;
   --header-h: 4rem;
-  color-scheme: light dark;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #0b0e14;
+  --fg: #e6e8ee;
+  --muted: #9aa2b1;
+  --border: #232a36;
+  --surface: #121722;
+  --accent: #8ab4ff;
+  --accent-soft: #17213a;
+  --brand: #6CB9DC;
+  --award-bg: #2a2210;
+  --award-fg: #f3d27a;
+  --award-border: #5a4718;
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --bg: #0b0e14;
     --fg: #e6e8ee;
     --muted: #9aa2b1;
@@ -28,10 +43,11 @@
     --surface: #121722;
     --accent: #8ab4ff;
     --accent-soft: #17213a;
-    --brand: #8ab4ff;
+    --brand: #6CB9DC;
     --award-bg: #2a2210;
     --award-fg: #f3d27a;
     --award-border: #5a4718;
+    color-scheme: dark;
   }
 }
 
@@ -71,7 +87,7 @@ a {
 
 a:hover {
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 2px;
 }
 
 :focus-visible {
@@ -123,6 +139,7 @@ img {
 
 .site-nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.5rem;
 }
@@ -135,6 +152,12 @@ img {
   list-style: none;
 }
 
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .site-nav a {
   color: var(--muted);
   font-size: 0.92rem;
@@ -145,17 +168,60 @@ img {
 .site-nav a:hover,
 .site-nav a[aria-current='page'] {
   color: var(--fg);
+  /* color: var(--accent); */
   text-decoration: none;
 }
 
 .site-nav .lang-switch {
-  padding: 0.2rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  /* padding: 0.2rem 0.5rem; */
+  padding: 0.2rem 0.7rem;
   border: 1px solid var(--border);
+  /* border-radius: 4px; */
   border-radius: 999px;
   font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
-.site-nav .lang-switch:hover {
+.site-nav .lang-switch a {
+  font-size: inherit;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.site-nav .lang-switch a[aria-current='page'] {
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.site-nav .lang-switch a:hover {
+  color: var(--accent);
+}
+
+.theme-toggle {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--muted);
+  font: inherit;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.theme-toggle:not([hidden]) {
+  display: inline-grid;
+  place-items: center;
+}
+
+.theme-toggle:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -221,7 +287,7 @@ img {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.06em;
 }
 
 .more {
@@ -334,9 +400,10 @@ img {
 
 .news li {
   display: grid;
-  grid-template-columns: 6.5rem 1fr;
+  grid-template-columns: 6rem 1fr;
   gap: 1rem;
-  padding: 0.4rem 0;
+  padding: 0.2rem 0;
+  line-height: 1.5;
 }
 
 .news time {
@@ -373,15 +440,20 @@ img {
 }
 
 .card-media {
+  position: relative;
   aspect-ratio: 16 / 9;
+  overflow: hidden;
   background: linear-gradient(135deg, #002060 0%, #1d4ed8 60%, #60a5fa 100%);
 }
 
 .card-media img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .card-body {
@@ -484,8 +556,9 @@ img {
 .pub-authors .me {
   /* color: var(--fg); */
   color: var(--muted);
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: underline;
+  text-decoration-color: var(--accent);
   text-underline-offset: 1.5px;
   /* text-decoration: underline;
   text-decoration-color: var(--accent);
@@ -506,17 +579,22 @@ img {
 
 .badge {
   display: inline-block;
-  padding: 0.3rem 0.65rem;
+  padding: 0.3rem 0.6rem;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 4px;
   font-size: 0.75rem;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .badge.award {
   border-color: var(--award-border);
   background: var(--award-bg);
   color: var(--award-fg);
+}
+
+.badge.link {
+  font-family: var(--font-ibm-plex-mono);
+  font-weight: 500;
 }
 
 .badge.link:hover {

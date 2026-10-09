@@ -2,6 +2,7 @@
 title: "Lunar and Planetary Climbing Exploration: Limbed Climbing Robotics"
 summary: Developing a four-limbed climbing robot capable of traversing diverse terrain to explore rough surfaces and rocky cliffs on the Moon and planets.
 order: 1
+featuredPublication: limbero-icra2026
 publications:
   - limbero-icra2026
   - reaction-clawar2024

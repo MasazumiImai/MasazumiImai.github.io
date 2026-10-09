@@ -1,4 +1,4 @@
-# section: education | experience | awards | scholarships | skills
+# section: education | experience | awards | grants | skills
 # start / end: "YYYY-MM" (or "present")
 # title / org / note: string, or { en: ..., ja: ... }
 
@@ -94,10 +94,10 @@
     en: International Space University
     ja: 国際宇宙大学
 
-# ========== Scholarships ==========
+# ========== Grants ==========
 
 - id: jsps-kakenhi-fellows
-  section: scholarships
+  section: grants
   start: "2024-04"
   end: "2026-03"
   title:
@@ -113,7 +113,7 @@
     ja: 日本学術振興会（JSPS）
 
 - id: spring
-  section: scholarships
+  section: grants
   start: "2023-04"
   end: "2024-03"
   title:
@@ -124,7 +124,7 @@
     ja: 科学技術振興機構（JST）
 
 - id: gp-mech
-  section: scholarships
+  section: grants
   start: "2025-06"
   end: "2025-10"
   title:

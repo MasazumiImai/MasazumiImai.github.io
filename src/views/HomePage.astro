@@ -33,7 +33,8 @@ const selected = (
   <section class="section">
     <div class="section-head">
       <h2 class="eyebrow">{t(lang, 'home.research')}</h2>
-      <a class="more" href={localizePath('/research/', lang)}>{t(lang, 'home.more')} →</a>
+      {/*<a class="more" href={localizePath('/research/', lang)}>{t(lang, 'home.more')} →</a>*/}
+      <a class="more" href={localizePath('/research/', lang)}>{t(lang, 'home.more')} >></a>
     </div>
     <div class="cards">
       {projects.map((entry) => <ResearchCard entry={entry} lang={lang} />)}
@@ -43,7 +44,8 @@ const selected = (
   <section class="section">
     <div class="section-head">
       <h2 class="eyebrow">{t(lang, 'home.selected')}</h2>
-      <a class="more" href={localizePath('/publications/', lang)}>{t(lang, 'home.more')} →</a>
+      {/*<a class="more" href={localizePath('/publications/', lang)}>{t(lang, 'home.more')} →</a>*/}
+      <a class="more" href={localizePath('/publications/', lang)}>{t(lang, 'home.more')} >></a>
     </div>
     <ol class="pub-list">
       {selected.map((pub) => <PubItem pub={pub} lang={lang} />)}

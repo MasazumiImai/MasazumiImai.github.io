@@ -15,7 +15,7 @@ const sectionKeys = {
   experience: 'cv.experience',
   education: 'cv.education',
   awards: 'cv.awards',
-  scholarships: 'cv.scholarships',
+  grants: 'cv.grants',
   skills: 'cv.skills',
 } as const;
 
@@ -24,7 +24,15 @@ const sections = (Object.keys(sectionKeys) as (keyof typeof sectionKeys)[])
     key,
     items: all
       .filter((e) => e.data.section === key)
-      .sort((a, b) => (b.data.start ?? '').localeCompare(a.data.start ?? '')),
+      .sort((a, b) => {
+        const aPresent = a.data.end === 'present';
+        const bPresent = b.data.end === 'present';
+        if (aPresent !== bPresent) return aPresent ? -1 : 1;
+
+        const aDate = (aPresent ? a.data.start : a.data.end ?? a.data.start) ?? '';
+        const bDate = (bPresent ? b.data.start : b.data.end ?? b.data.start) ?? '';
+        return bDate.localeCompare(aDate) || (b.data.start ?? '').localeCompare(a.data.start ?? '');
+      }),
   }))
   .filter((section) => section.items.length > 0);
 

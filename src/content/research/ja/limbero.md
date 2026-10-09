@@ -2,6 +2,7 @@
 title: "月や惑星の不整地・岩壁探査：脚型クライミングロボット"
 summary: 月や惑星の不整地・岩壁の探査に向け，多様な地形を登攀可能な4脚クライミングロボットの研究開発をしています．
 order: 1
+featuredPublication: limbero-icra2026
 publications:
   - limbero-icra2026
   - reaction-clawar2024
